@@ -1,2 +1,2 @@
 # GenericDecodable
-GenericDecodable is a generic protocol to map any json response
+GenericDecodable is a generic protocol to map any json response in Swift
