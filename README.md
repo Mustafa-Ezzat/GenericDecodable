@@ -1,11 +1,7 @@
 # GenericDecodable
 GenericDecodable is a generic protocol to map any json response in Swift
 
-# Json response cases:
-
-1- Have extra key-value
-2- Have Key with null value
-3- Missing key
+# Json response cases: [Have extra key-value pairs, Have key with null value, Missing key-value pairs]
 
 Solution: Ignore extra key-value, map the desired key-value and handle null with default value based on your business.
 
