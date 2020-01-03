@@ -16,3 +16,23 @@ public extension KeyedDecodingContainer {
 
 # Usage
 
+```
+struct SearchModel {
+    var artistId: Int?
+    var trackId: Int?
+    var artistName: String?
+}
+
+extension SearchModel: Decodable {
+    enum SearchModelCodingKeys: String, CodingKey {
+        case artistId
+        case trackId
+        case artistName
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: SearchModelCodingKeys.self)
+        artistId = try container.decodeWrapper(key: .artistId, defaultValue: -1)
+        trackId = try container.decodeWrapper(key: .trackId, defaultValue: -1)
+        artistName = try container.decodeWrapper(key: .artistName, defaultValue: "")
+    }
+}
